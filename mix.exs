@@ -10,7 +10,17 @@ defmodule PhoenixOverrun.MixProject do
       compilers: [:phoenix, :gettext] ++ Mix.compilers(),
       start_permanent: Mix.env() == :prod,
       aliases: aliases(),
-      deps: deps()
+      deps: deps(),
+
+      # Documentation
+      name: "PhoenixOverrun",
+      source_url: "https://github.com/exaesel/phoenix_overrun",
+      homepage_url: "https://github.com/exaesel/phoenix_overrun",
+      docs: [
+        main: "PhoenixOverrun",
+        logo: "",
+        extras: "README.md"
+      ]
     ]
   end
 
@@ -33,6 +43,7 @@ defmodule PhoenixOverrun.MixProject do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
+      {:ex_doc, "~> 0.25.3", only: :dev, runtime: false},
       {:phoenix, "~> 1.5.13"},
       {:phoenix_ecto, "~> 4.4"},
       {:ecto_sql, "~> 3.4"},
